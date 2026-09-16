@@ -6,15 +6,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  docker-build-and-run:
+  docker-build-and-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-     
-      - name: Docker sigin
-        uses: docker/login-action@v2
+      - name: Docker login
+        uses: docker/login-action@v3
         with:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
@@ -22,4 +21,5 @@ jobs:
       - name: Docker build
         run: docker build -t midhunshanmugam/application:gta .
 
-      
+      - name: Docker push
+        run: docker push midhunshanmugam/application:gta
