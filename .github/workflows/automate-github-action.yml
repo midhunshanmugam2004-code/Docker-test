@@ -25,7 +25,7 @@ jobs:
         run: docker push midhunshanmugam/application:gta
       
       - name: Run Docker container
-        run: docker run -p 5000:5000 --name gta-container midhunshanmugam/application:gta
+        run: docker run -p 5001:5000 --name gta-container midhunshanmugam/application:gta
 
       - name: Check running container
         run: docker ps
