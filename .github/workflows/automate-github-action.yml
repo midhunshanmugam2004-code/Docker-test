@@ -16,9 +16,9 @@ jobs:
       - name: Docker sigin
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          
+
       - name: Docker build
         run: docker build -t midhunshanmugam/application:gta .
 
