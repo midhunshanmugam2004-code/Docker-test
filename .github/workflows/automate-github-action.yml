@@ -25,4 +25,4 @@ jobs:
         run: docker push midhunshanmugam/application:gta
 
       - name: Docker run
-        run: docker run -p 5000:5000 calculator midhunshanmugam/application:gta
+        run: docker run -p 5000:5000 gta midhunshanmugam/application
