@@ -1,0 +1,11 @@
+name: Automate all the actions
+on:
+  push:
+    branches:
+      -main
+jobs:
+  name: docker build and run
+  run-on: ubuntu-latest
+  steps:
+    - name: docker build
+      run: docker build -t midhunshanmugam/application:gta .
